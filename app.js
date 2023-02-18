@@ -1,6 +1,6 @@
 const express = require('express');
 require("dotenv").config();
-
+const fs = require('fs');
 const app = express();
 	
 //GET method route
@@ -8,18 +8,18 @@ const app = express();
 //     res.send('Get request to the homepage');
 // });
 
-// app.get('/', function (req, res){
-// res.send("Hello world")
-// })
+app.get('/', function (req, res){
+res.send("Hello world")
+})
 
-// app.get('/two', function (req, res){
-// res.send("PAGE TWO")
-// })
+app.get('/two', function (req, res){
+res.send("PAGE TWO")
+})
 
 //POST method route
-app.post('/', function (req, res) {
-    res.send('Post request to the hmoepage');
-});
+// app.post('/', function (req, res) {
+//     res.send('Post request to the hmoepage');
+// });
 
 
 // app.get('/todos', (req, res)=>{
@@ -32,5 +32,5 @@ app.post('/', function (req, res) {
     //         return res.json({todos : todos})
     //     })
     // })
-    
+
 app.listen(process.env.PORT);
